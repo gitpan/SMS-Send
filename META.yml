@@ -1,5 +1,5 @@
 name: SMS-Send
-version: 0.01
+version: 0.02
 abstract: Driver-based API for sending SMS messages
 author: Adam Kennedy <cpan@ali.as>, L<http://ali.as/>
 license: perl

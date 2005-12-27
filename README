@@ -4,8 +4,8 @@ NAME
 SYNOPSIS
       # Create a sender
       my $sender = SMS::Send->new('SomeDriver',
-            login    => 'myname',
-            password => 'mypassword',
+            _login    => 'myname',
+            _password => 'mypassword',
             );
   
       # Send a message
@@ -22,7 +22,7 @@ SYNOPSIS
       }
 
 DESCRIPTION
-    SMS::Send is intended to provide a driver-based single API for sending
+    "SMS::Send" is intended to provide a driver-based single API for sending
     SMS and MMS messages. The intent is to provide a single API against
     which to write the code to send an SMS message.
 
@@ -30,8 +30,8 @@ DESCRIPTION
     previous attempts at this sort of API, like "must be free internet-based
     SMS services".
 
-    SMS::Send drivers are installed seperately, and might use the web, email
-    or physical SMS hardware. It could be a free or paid. The details
+    "SMS::Send" drivers are installed seperately, and might use the web,
+    email or physical SMS hardware. It could be a free or paid. The details
     shouldn't matter.
 
     You should not have to care how it is actually sent, only that it has
@@ -51,8 +51,8 @@ METHODS
   
       # Pass arbitrary params to the driver
       $sender = SMS::Send->new('MyDriver',
-          login    => 'adam',
-          password => 'adam',
+          _login    => 'adam',
+          _password => 'adam',
           );
 
     The "new" constructor creates a new SMS sender.
@@ -60,6 +60,15 @@ METHODS
     It takes as its first parameter a driver name. These names map the class
     names. For example driver "Test" matches the testing driver
     SMS::Send::Test.
+
+    Any additional params should be key/value pairs, split into two types.
+
+    Params without a leading underscore are "public" options and relate to
+    standardised features within the SMS::Send API itself. At this time,
+    there are no usable public options.
+
+    Params with a leading underscore are "private" driver-specific options
+    and will be passed through to the driver unchanged.
 
     Returns a new SMS::Send object, or dies on error.
 
@@ -74,8 +83,10 @@ METHODS
     phone number.
 
     It takes a set of named parameters to describe the message and its
-    destination. This use of named params is primarily for future proofing,
-    as a number of additional features are expected in the future.
+    destination, again split into two types.
+
+    Params without a leading underscore are "public" options and relate to
+    standardised features within the SMS::Send API itself.
 
     text
         The "text" param is compulsory and should be a plain text string of
@@ -99,8 +110,8 @@ METHODS
         Providing a regional number to a non-regional driver will throw an
         exception.
 
-    Any parameters with a leading underscore are considered driver-specific
-    and will be passed through without alteration.
+    Any parameters with a leading underscore are considered private
+    driver-specific options and will be passed through without alteration.
 
     Any other parameters without a leading underscore will be silently
     stripped out and not passed through to the driver.
