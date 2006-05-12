@@ -1,19 +1,21 @@
+
+no_index: 
+  directory: 
+    - inc
+    - t
+generated_by: Module::Install version 0.62
+distribution_type: module
+version: 0.03
 name: SMS-Send
-version: 0.02
-abstract: Driver-based API for sending SMS messages
 author: Adam Kennedy <cpan@ali.as>, L<http://ali.as/>
 license: perl
-distribution_type: module
-build_requires:
-  File::Spec: 0.80
+build_requires: 
   Test::More: 0.47
-requires:
-  perl: 5.005
-  Carp: 0
-  Params::Util: 0.02
-  Class::Adapter: 1.00
+  File::Spec: 0.80
+requires: 
   Module::Pluggable: 2.5
-no_index:
-  directory:
-    - inc
-generated_by: Module::Install version 0.45
+  perl: 5.005
+  Params::Util: 0.14
+  Class::Adapter: 1.00
+  Carp: 0
+abstract: Driver-based API for sending SMS messages
