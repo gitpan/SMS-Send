@@ -3,20 +3,14 @@
 # Test the creation of a new SMS::Send object
 
 use strict;
-use lib ();
-use File::Spec::Functions ':ALL';
 BEGIN {
-	$| = 1;
-	unless ( $ENV{HARNESS_ACTIVE} ) {
-		require FindBin;
-		$FindBin::Bin = $FindBin::Bin; # Avoid a warning
-		chdir catdir( $FindBin::Bin, updir() );
-		lib->import('blib', 'lib');
-	}
+	$|  = 1;
+	$^W = 1;
 }
 
 use Test::More tests => 25;
 use SMS::Send;
+use File::Spec::Functions ':ALL';
 
 use Params::Util '_INSTANCE';
 sub dies_like {
