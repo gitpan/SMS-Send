@@ -20,7 +20,8 @@ t/01_compile.t
 t/02_basic.t
 t/03_new.t
 t/04_send.t
-t/99_author.t
+t/98_pod.t
+t/99_pmv.t
 t/lib/SMS/Send/BAD1.pm
 t/lib/SMS/Send/BAD2.pm
 t/lib/SMS/Send/BAD3.pm

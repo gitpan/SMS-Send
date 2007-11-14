@@ -1,11 +1,16 @@
+--- 
 abstract: Driver-based API for sending SMS messages
-author: Adam Kennedy <cpan@ali.as>, L<http://ali.as/>
+author: 
+  - Adam Kennedy <adamk@cpan.org>, L<http://ali.as/>
 build_requires: 
   File::Spec: 0.80
   Test::More: 0.47
 distribution_type: module
-generated_by: Module::Install version 0.64
+generated_by: Module::Install version 0.68
 license: perl
+meta-spec: 
+  url: http://module-build.sourceforge.net/META-spec-v1.3.html
+  version: 1.3
 name: SMS-Send
 no_index: 
   directory: 
@@ -17,4 +22,4 @@ requires:
   Module::Pluggable: 2.5
   Params::Util: 0.14
   perl: 5.005
-version: 0.04
+version: 0.05
