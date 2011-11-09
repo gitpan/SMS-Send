@@ -4,21 +4,21 @@ NAME
 SYNOPSIS
       # Create a sender
       my $sender = SMS::Send->new('SomeDriver',
-            _login    => 'myname',
-            _password => 'mypassword',
-            );
-  
-      # Send a message
+          _login    => 'myname',
+          _password => 'mypassword',
+      );
+      
+  # Send a message
       my $sent = $sender->send_sms(
-            text => 'This is a test message',
-            to   => '+61 (4) 1234 5678',
-            );
-  
-      # Did the send succeed.
+          text => 'This is a test message',
+          to   => '+61 (4) 1234 5678',
+      );
+      
+  # Did the send succeed.
       if ( $sent ) {
-            print "Message sent ok\n";
+          print "Message sent ok\n";
       } else {
-            print "Failed to send message\n";
+          print "Failed to send message\n";
       }
 
 DESCRIPTION
@@ -45,15 +45,15 @@ METHODS
   new
       # The most basic sender
       $sender = SMS::Send->new('Test');
-  
-      # Indicate regional driver with ::
+      
+  # Indicate regional driver with ::
       $sender = SMS::Send->new('AU::Test');
-  
-      # Pass arbitrary params to the driver
+      
+  # Pass arbitrary params to the driver
       $sender = SMS::Send->new('MyDriver',
           _login    => 'adam',
           _password => 'adam',
-          );
+      );
 
     The "new" constructor creates a new SMS sender.
 
@@ -75,9 +75,9 @@ METHODS
   send_sms
       # Send a message to a particular address
       my $result = $sender->send_sms(
-            text => 'This is a test message',
-            to   => '+61 4 1234 5678',
-            );
+          text => 'This is a test message',
+          to   => '+61 4 1234 5678',
+      );
 
     The "send_sms" method sends a standard text SMS message to a destination
     phone number.
@@ -137,10 +137,10 @@ SUPPORT
     For other issues, contact the author.
 
 AUTHOR
-    Adam Kennedy <adamk@cpan.org>, <http://ali.as/>
+    Adam Kennedy <adamk@cpan.org>
 
 COPYRIGHT
-    Copyright 2005 Adam Kennedy.
+    Copyright 2005 - 2011 Adam Kennedy.
 
     This program is free software; you can redistribute it and/or modify it
     under the same terms as Perl itself.
